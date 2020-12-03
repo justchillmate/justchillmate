@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    int n, i, b;
+    
+    printf("Number of Faces: ");
+    scanf("%d",&n);
+
+    while(n>25){
+    printf("Maximum Number of Faces Allowed : 25\n");
+    printf("Please RE-ENTER the Number of faces :)\nHere :");
+    scanf("%d", &n);
+    }
+    while(n<1){
+    printf("Minimum Number of Faces : 1\n");
+    printf("Please RE-ENTER the Number of faces :)\nHere :");
+    scanf("%d", &n);
+    }
+    
+    printf("\nNumber of Throws:");
+    scanf("%d",&b);
+
+    while(b>500){
+    printf("Maximum Number of Throws Allowed : 500\n");
+    printf("Please RE-ENTER the Number of Throws :)\nHere :");
+    scanf("%d", &b);
+    }
+    while(b<1){
+    printf("Minimum Number of Throws : 1\n");
+    printf("Please RE-ENTER the Number of Throws :)\nHere :");
+    scanf("%d", &b);
+    }
+            
+    
+    printf("Please wait, Generating Throws\n");
+    
+    for (i = 0; i < b; i++)
+        printf("%d ", (rand() % n) + 1);
+
+    double occurPercentage, occurrence; 
+    
+    printf("\n\nThe percentage of the occurences of the values are: ");
+    for(int p = 0; p<n; p++)
+    {
+        double occurPercentage=(double)occurPercentage*100;
+        printf("\n  Occurences of %d: %0.2f%%", (p+1), occurPercentage);
+    }
+    
+    return 0;
+}
